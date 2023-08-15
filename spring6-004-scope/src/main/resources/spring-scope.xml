@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    目前来说：scope属性有两个值
+    第一个值是：singleton 单例（默认情况下就是单例）
+    第二值是：prototype 原型/多例
+    -->
+    <bean id="sb" class="com.szq.spring6.bean.SpringBean" scope="myThread"/>
+
+
+    <!--
+    配置我们自定义的作用域
+    -->
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="myThread">
+                    <!--这个Scope的接口的实现类使用的是Spring框架内置的，也可以自定义-->
+                    <bean class="org.springframework.context.support.SimpleThreadScope"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

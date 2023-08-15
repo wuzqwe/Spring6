@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    第一步：在spring的配置文件头部添加p命名空间xmlns:p="http://www.springframework.org/schema/p"
+    第二步：使用
+    -->
+    <bean id="dogBean" class="com.szq.spring6.bean.Dog" p:name="小花" p:age="20" p:birth-ref="dateBean"/>
+
+    <bean id="dateBean" class="java.util.Date"/>
+
+
+</beans>

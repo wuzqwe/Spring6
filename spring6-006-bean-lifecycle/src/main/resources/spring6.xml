@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean class="com.szq.spring6.bean.User" id="user" init-method="initBean" destroy-method="destroyBean">
+        <property name="name" value="zhansan"/>
+        </bean>
+
+
+        <!--配置Bean后处理器-->
+    <bean class="com.szq.spring6.bean.LogBeanPostProccessor" />
+</beans>

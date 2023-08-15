@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDaoBean" class="com.szq.spring6.dao.UserDao"/>
+
+    <bean id="customerServiceBean" class="com.szq.spring6.service.CustomerService">
+        <!--构造注入-->
+        <!--构造方法的第一个参数，下标是0-->
+<!--        <constructor-arg index="0" ref="userDaoBean"/>-->
+        <constructor-arg name="userDao" ref="userDaoBean"/>
+    </bean>
+</beans>

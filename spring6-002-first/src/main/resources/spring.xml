@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--这就是Spring的配置文件
+    IDEA工具提供为我们提供了这个文件的模板，一定使用这个模板来创建
+    -->
+    <!--配置bean，这个spring才可以帮助我们管理这个对象-->
+    <!--bean标签的两个重要属性：
+        id:是这个bean的身份证号，不能重复，是唯一标识
+        class:必须填写类的全限定类名
+    -->
+    <bean id="userBean" class="com.szq.spring6.bean.User"/>
+
+    <bean id="userDaoImplBean" class="com.szq.spring6.dao.Impl.UserDaoImpl"/>
+
+</beans>

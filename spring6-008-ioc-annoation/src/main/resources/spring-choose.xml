@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--给Spring框架指定要扫描哪些包的类-->
+    <!--多个包用逗号隔开-->
+    <!--
+        第一种解决方案
+        use-default-filters
+        如果是false,表示com.szq.spring6.bean2包下的带有声明Bean的注解全部失效@Component
+        true则相反
+    -->
+    <context:component-scan base-package="com.szq.spring6.bean2" use-default-filters="false">
+        <!--只有@Repository被包含进来生效-->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+</beans>
